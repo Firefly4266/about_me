@@ -133,4 +133,9 @@ while (response === false) {
     response = true;
   }
 }
-console.log(userName + ', you guessed ' + (gameCount) + ' questions right out of 7');
+if(gameCount > 5) {
+  console.log('Congratulations ' + userName + '!  You guessed ' + (gameCount) + ' questions right out of 7');
+}else {
+  console.log('Too bad ' + userName + ' you really need to sharpen your skills.  May I suggest some classes at Code Fellows?');
+  
+}
