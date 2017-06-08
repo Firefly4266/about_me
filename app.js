@@ -1,8 +1,8 @@
-// 'use strict';
+'use strict';
 
-// let userName = prompt('Welcome to my page.  If you ready to play introduce yourself.');
-// alert('Nice to meet you ' + userName + '. I am going to ask you some questions about me.  No pressure really?');
-// console.log('The user name is ' + userName);
+let userName = prompt('Welcome to my page.  If you ready to play introduce yourself.');
+alert('Nice to meet you ' + userName + '. I am going to ask you some questions about me.  No pressure really?');
+console.log('The user name is ' + userName);
 
 
 // let answer = 'yes';
@@ -56,8 +56,33 @@
 // }else if (response5 === wrong || response5 === wrong[0]) {
 //   alert('You are correct ' + userName + '. Although the money is good, my primary motivation for the career shift is so I can spend more time being present for my children as they move into adulthood.');
 // }else{
-//   alert(userName + ', if you\'re not going to give real answers I\'m done!');
+//   alert(userName + ', if you\'re not going to give real answers let\'s move on to something else.');
 // }
 // console.log('The response from ' + userName + ' was ' + response5);
 
-
+let count = 1;
+let spent = 3;
+let tree = 5;
+alert('Ok ' + userName + ', now let\'s check your binary search skills!  I\'ll give you 4 chances to guess how many fruit trees I have.  I\'ll even tell you if you are too high or too low.');
+let response6 = parseInt(prompt('So ' + userName + ', how many fruit trees do I have?'));
+while (count < 4) {
+  if (response6 === tree) {
+    alert(
+      'Excellent Guess ' + userName + '!!!  You are a true binary search ninja!!!'
+    );
+    count = 5;
+  }else if (response6 < tree){
+    prompt('Sorry ' + userName + ', that was too low.  Try again. You have ' + spent + ' tries left.');
+    spent--;
+    console.log('Incorrect answer total ' + (4 - spent));
+  }else if (response6 > tree){
+    prompt('Sorry ' + userName + ', that was too high.  Try again. You have ' + spent + ' tries left.');
+    spent--;
+    console.log('Incorrect answer total ' + (4 - spent));
+  }else {
+    prompt('Sorry ' + userName + ' that is incorrect.  You have ' + spent + ' tries left.');
+    spent--;
+    console.log('Incorrect answer total ' + (4 - spent));  
+  }
+  count++;
+}

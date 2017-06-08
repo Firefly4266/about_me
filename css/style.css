@@ -1,43 +1,46 @@
-/** {
-  border: 3px solid black;
-}*/
-
 body {
-  border: 3px solid black;
+  background-image: url("/home/jp/coding/codefellows/201-d30/labs_jp/02lab/about_me/public/images/download (3).jpg");
+  background-repeat: no-repeat;
+  background-size:  100%; 
+  color: red;
 }
 
 .wrapper {
-  position: relative;
-}
+  /*display: flex;*/
 
-.wrapper img {
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: auto;
-  opacity: 0.3;
-}
-
-h2 {
-  position: absolute;
-  margin-top: 2em;
-  z-index: 2;
-  margin-left:10em; 
 }
 
 .greet {
-  position: relative;
+  /*border: 3px solid black;*/
+  margin: 5%;
+  padding: 2em;
+  display: flex;
+}
+
+.align {
+  /*display: flex;
+  justify-content: space-around;*/
 }
 
 .work {
-  position: absolute;
-  margin-top: 14em;
-  padding: 1em;
-  /*margin-top: -30em;*/
+  /*border: 3px solid black;*/
+  flex-basis: 45%;
+  box-sizing: border-box;
 }
 
 .space {
-  position: absolute;
-  padding: 1em;
-  margin-top: 5em;
+  /*border: 3px solid black;*/
+  flex-basis: 45%;
+  box-sizing: border-box;
+}
+
+.center {
+  margin: auto;
+}
+
+@media (min-width: 900px) {
+  .align {
+    display: flex;
+    justify-content: space-around;
+  }
 }
