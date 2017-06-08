@@ -1,3 +1,7 @@
+/** {
+  border: 3px solid black;
+}*/
+
 body {
   border: 3px solid black;
 }
@@ -16,11 +20,24 @@ body {
 
 h2 {
   position: absolute;
-  margin-top: 10em;
+  margin-top: 2em;
   z-index: 2;
   margin-left:10em; 
 }
 
 .greet {
   position: relative;
+}
+
+.work {
+  position: absolute;
+  margin-top: 14em;
+  padding: 1em;
+  /*margin-top: -30em;*/
+}
+
+.space {
+  position: absolute;
+  padding: 1em;
+  margin-top: 5em;
 }
