@@ -69,32 +69,34 @@ let tree = 5;
 
 alert('Ok ' + userName + ', now let\'s check your binary search skills!  I\'ll give you 4 chances to guess how many fruit trees I have.  I\'ll even tell you if you are too high or too low.');
 
-while (count <= 4) {
-  let response6 = parseInt(prompt('So ' + userName + ', how many fruit trees do I have?'));
-  if (isNaN(response6)) {
-    alert('Please enter a valid number');
-    prompt('So ' + userName + ', how many fruit trees do I have?');
-  }
-  if (response6 === tree) {
-    alert(
-      'Excellent Guess ' + userName + '!!!  You are a true binary search ninja!!!'
-    );
-    gameCount++;
-    count = 5;
-  }else if (response6 > tree){
-    alert('Sorry ' + userName + ', that was too high.  Try again. You have ' + spent + ' tries left.');
-    spent--;
-    console.log('Incorrect answer total ' + (4 - spent));
-  }else if (response6 < tree){
-    alert('Sorry ' + userName + ', that was too low.  Try again. You have ' + spent + ' tries left.');
-    spent--;
-    console.log('Incorrect answer total ' + (4 - spent));
+let response6 = parseInt(prompt('So ' + userName + ', how many fruit trees do I have?'));
+while (count < 4) {
+  if(isNaN(response6) === false) {
+    if (response6 === tree) {
+      alert('Excellent Guess ' + userName + '!!!  You are a true binary search ninja!!!');
+      gameCount++;
+      count = 5;
+    }else if (response6 > tree){
+      alert('Sorry ' + userName + ', that was too high.  Try again. You have ' + spent + ' tries left.');
+      spent--;
+      console.log(userName + '\'s answer was ' + response6 +'. The correct answer was 5. Incorrect answer total ' + (4 - spent));
+      response6 = parseInt(prompt('So ' + userName + ', how many fruit trees do I have?'));
+    }else if (response6 < tree){
+      alert('Sorry ' + userName + ', that was too low.  Try again. You have ' + spent + ' tries left.');
+      response6 = parseInt(prompt('So ' + userName + ', how many fruit trees do I have?'));
+      spent--;
+      console.log(userName + '\'s answer was ' + response6 +'. The correct answer was 5. Incorrect answer total ' + (4 - spent));  
+    }else {
+      alert('Sorry ' + userName + ' that is incorrect.  You have ' + spent + ' tries left.');
+      response6 = parseInt(prompt('So ' + userName + ', how many fruit trees do I have?'));
+      spent--;
+      console.log(userName + '\'s answer was ' + response6 +'. The correct answer was 5. Incorrect answer total ' + (4 - spent)); 
+    }
+    count++;
   }else {
-    alert('Sorry ' + userName + ' that is incorrect.  You have ' + spent + ' tries left.');
-    spent--;
-    console.log('Incorrect answer total ' + (4 - spent));  
+    alert('Please enter a valid number');
+    response6 = parseInt(prompt('So ' + userName + ', how many fruit trees do I have?'));
   }
-  count++;
 }
 
 alert('Ok ' + userName + ', it\'s time to shift gears.  Heres a different challenge.');
