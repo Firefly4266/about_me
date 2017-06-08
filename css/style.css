@@ -2,23 +2,25 @@ body {
   background-image: url("/home/jp/coding/codefellows/201-d30/labs_jp/02lab/about_me/public/images/download (3).jpg");
   background-repeat: no-repeat;
   background-size:  100%; 
-  color: red;
 }
 
 .greet {
   margin: 5%;
   padding: 2em;
   display: flex;
+  color: cadetblue;
 }
 
 .work {
   flex-basis: 45%;
   box-sizing: border-box;
+  color: cadetblue;
 }
 
 .space {
   flex-basis: 45%;
   box-sizing: border-box;
+  color: cadetblue;
 }
 
 .center {
