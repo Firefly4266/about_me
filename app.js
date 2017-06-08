@@ -1,6 +1,5 @@
 'use strict';
 
-
 var userName = prompt('Welcome to my page.  If you ready to play introduce yourself.');
 alert('Nice to meet you ' + userName + '. I am going to ask you some questions about me.  No pressure really?');
 console.log('The user name is ' + userName);
@@ -31,7 +30,6 @@ if (response2 === answer || response2 === answer[0]) {
 }
 console.log('The response from ' + userName + ' was ' + response2);
 
-
 let response3 = prompt('Am I just bored doing 201 again?').toLowerCase();
 if (response3 === answer || response3 === answer[0]) {
   alert('Wrong answer ' + userName + ', I pick something up every time I go through a Code Fellows class.  I love that!');
@@ -42,7 +40,6 @@ if (response3 === answer || response3 === answer[0]) {
   alert(userName + ', you need to answer yes or no...');
 }
 console.log('The response from ' + userName + ' was ' + response3);
-
 
 let response4 = prompt('Would I recommend this career path to everyone?').toLowerCase();
 if (response4 === answer || response4 === answer[0]) {
@@ -100,7 +97,6 @@ while (count <= 4) {
   count++;
 }
 
-
 alert('Ok ' + userName + ', it\'s time to shift gears.  Heres a different challenge.');
 
 let states = ['illinois', 'texas','shock', 'massachusetts','grace', 'missouri', 'rhode island', 'disbelief'] ;
@@ -120,8 +116,7 @@ while (response === false) {
       alert('Great job ' + userName + '!  Your\'re pretty sharp!');
       console.log(userName + ' used ' + tries + ' out of ' + '6 guesses.');
       gameCount++;
-    }
-    
+    }    
   }
   if(response === false) {
     alert('Sorry ' + userName + ', that is incorrect.  You have ' + triesLeft + ' tries left.');
@@ -136,6 +131,5 @@ while (response === false) {
 if(gameCount > 5) {
   console.log('Congratulations ' + userName + '!  You guessed ' + (gameCount) + ' questions right out of 7');
 }else {
-  console.log('Too bad ' + userName + ' you really need to sharpen your skills.  May I suggest some classes at Code Fellows?');
-  
+  console.log('Too bad ' + userName + ' you really need to sharpen your skills.  May I suggest some classes at Code Fellows?');  
 }
