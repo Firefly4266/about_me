@@ -1,18 +1,15 @@
 'use strict';
 
-var userName;
-var response;
+var states = ['illinois', 'texas','shock', 'massachusetts','grace', 'missouri', 'rhode island', 'disbelief'] ;
+var userName, response;
 
 function user() {
   userName = prompt('Welcome to my page.  If you ready to play introduce yourself.');
   alert('Nice to meet you ' + userName + '. I am going to ask you some questions about me.  No pressure really? A short series of Yes or No questions.  Please answer Yes (y) or NO (n).');
   console.log('The user name is ' + userName);
 }
-user(userName);
 
-var gameCount = 0;
-var answer = 'yes';
-var wrong = 'no';
+var gameCount = 0, answer = 'yes', wrong = 'no';
 
 function question1() {
   response = prompt('Was I a successful Bridge Officer?').toLowerCase();
@@ -39,7 +36,6 @@ function question2() {
   }
   console.log('The response from ' + userName + ' was ' + response);
 }
-
 
 function question3() {
   response = prompt('Am I just bored doing 201 again?').toLowerCase();
@@ -80,82 +76,88 @@ function question5() {
   console.log('The response from ' + userName + ' was ' + response);
 }
 
-var count = 1;
-var spent = 3;
-var tree = 5;
+var count = 1, spent = 3, tree = 5;
 
-alert('Ok ' + userName + ', now var\'s check your binary search skills!  I\'ll give you 4 chances to guess how many fruit trees I have.  I\'ll even tell you if you are too high or too low.');
-
-var response6 = parseInt(prompt('So ' + userName + ', how many fruit trees do I have?'));
-while (count <= 4) {
-  if(isNaN(response6) === false) {
-    if (response6 === tree) {
-      alert('Excellent Guess ' + userName + '!!!  You are a true binary search ninja!!!');
-      gameCount++;
-      count = 5;
-    }else if (response6 > tree){
-      alert('Sorry ' + userName + ', that was too high.  Try again. You have ' + spent + ' tries left.');
-      spent--;
-      console.log(userName + '\'s answer was ' + response6 +'. The correct answer was 5. Incorrect answer total ' + (4 - spent));
-      response6 = parseInt(prompt('So ' + userName + ', how many fruit trees do I have?'));
-    }else if (response6 < tree){
-      alert('Sorry ' + userName + ', that was too low.  Try again. You have ' + spent + ' tries left.');
-      response6 = parseInt(prompt('So ' + userName + ', how many fruit trees do I have?'));
-      spent--;
-      console.log(userName + '\'s answer was ' + response6 +'. The correct answer was 5. Incorrect answer total ' + (4 - spent));  
-    }else {
-      alert('Sorry ' + userName + ' that is incorrect.  You have ' + spent + ' tries left.');
-      response6 = parseInt(prompt('So ' + userName + ', how many fruit trees do I have?'));
-      spent--;
-      console.log(userName + '\'s answer was ' + response6 +'. The correct answer was 5. Incorrect answer total ' + (4 - spent)); 
-    }
-    count++;
-  }else {
-    alert('Please enter a valid number');
-    response6 = parseInt(prompt('So ' + userName + ', how many fruit trees do I have?'));
-  }
-}
-
-alert('Ok ' + userName + ', it\'s time to shift gears.  Heres a different challenge.');
-
-var states = ['illinois', 'texas','shock', 'massachusetts','grace', 'missouri', 'rhode island', 'disbelief'] ;
-var tries = 1;
-var triesLeft = 5;
-
-while (tries < 6) {
-  var response7 = prompt(userName + ' Can you guess a state I lived in besides Washington?').toLowerCase();
-  if (isNaN(response7) === false) {
-    alert(userName + ' your response is not valid.  Please enter a valid state.');
-  } else {
-    var i;
-    for (i = 0; i < 5; i++) {
-      if (states.indexOf(response7) >= 0) {
-        alert('Great job ' + userName + '!  Your\'re pretty sharp!');
-        console.log(userName + ' used ' + tries + ' out of ' + '6 guesses.');
+function question6() {
+  alert('Ok ' + userName + ', now var\'s check your binary search skills!  I\'ll give you 4 chances to guess how many fruit trees I have.  I\'ll even tell you if you are too high or too low.');
+  response = parseInt(prompt('So ' + userName + ', how many fruit trees do I have?'));
+  while (count <= 4) {
+    if(isNaN(response) === false) {
+      if (response === tree) {
+        alert('Excellent Guess ' + userName + '!!!  You are a true binary search ninja!!!');
+        console.log(userName + ' guessed' + response + ' the answer is ' + tree);
         gameCount++;
-        break;
+        count = 5;
+      }else if (response > tree){
+        alert('Sorry ' + userName + ', that was too high.  Try again. You have ' + spent + ' tries left.');
+        console.log(userName + '\'s answer was ' + response +'. The correct answer was 5. Incorrect answer total ' + (4 - spent));
+        spent--;
+        response = parseInt(prompt('So ' + userName + ', how many fruit trees do I have?'));
+      }else if (response < tree){
+        alert('Sorry ' + userName + ', that was too low.  Try again. You have ' + spent + ' tries left.');
+        console.log(userName + '\'s answer was ' + response +'. The correct answer was 5. Incorrect answer total ' + (4 - spent));  
+        spent--;
+        response = parseInt(prompt('So ' + userName + ', how many fruit trees do I have?'));
       }else {
-        alert('Sorry ' + userName + ', that is incorrect.  You have ' + triesLeft + ' tries left.');
-        console.log('Wrong answer, ' + userName + '\'s answer was ' + response7 + '. ' + (tries) + ' guesses used.');
-        response7 = prompt(userName + ' Can you guess one state I lived in besides Washington?').toLowerCase();
-        tries++;
-        triesLeft--;
+        alert('Sorry ' + userName + ' that is incorrect.  You have ' + spent + ' tries left.');
+        console.log(userName + '\'s answer was ' + response +'. The correct answer was 5. Incorrect answer total ' + (4 - spent)); 
+        spent--;
+        response = parseInt(prompt('So ' + userName + ', how many fruit trees do I have?'));
       }
+      count++;
+    }else {
+      alert('Please enter a valid number');
+      response = parseInt(prompt('So ' + userName + ', how many fruit trees do I have?'));
     }
-    tries = 7;
   }
 }
 
-if(gameCount >= 5) {
-  console.log('Congratulations ' + userName + '!  You guessed ' + (gameCount) + ' questions right out of 7');
-  document.write('Congratulations ' + userName + '!  You guessed ' + (gameCount) + ' questions right out of 7');
-}else {
-  console.log('Too bad ' + userName + ' you really need to sharpen your skills.  May I suggest some classes at Code Fellows?');
-  document.write('Too bad ' + userName + ' you really need to sharpen your skills.  May I suggest some classes at Code Fellows?');  
+var tries = 1, triesLeft = 5;
+
+function question7() {
+  alert('Ok ' + userName + ', it\'s time to shift gears.  Heres a different challenge.');
+  while (tries < 6) {
+    var response = prompt(userName + ' Can you guess a state I lived in besides Washington?').toLowerCase();
+    if (isNaN(response) === false) {
+      alert(userName + ' your response is not valid.  Please enter a valid state.');
+    } else {
+      var i;
+      for (i = 0; i < 5; i++) {
+        if (states.indexOf(response) >= 0) {
+          alert('Great job ' + userName + '!  Your\'re pretty sharp!');
+          console.log(userName + ' used ' + tries + ' out of ' + '6 guesses.');
+          gameCount++;
+          break;
+        }else {
+          alert('Sorry ' + userName + ', that is incorrect.  You have ' + triesLeft + ' tries left.');
+          console.log('Wrong answer, ' + userName + '\'s answer was ' + response + '. ' + (tries) + ' guesses used.');
+          response = prompt(userName + ' Can you guess one state I lived in besides Washington?').toLowerCase();
+          tries++;
+          triesLeft--;
+        }
+      }
+      tries = 7;
+    }
+  }
 }
 
+function results(){
+  if(gameCount >= 5) {
+    console.log('Congratulations ' + userName + '!  You guessed ' + (gameCount) + ' questions right out of 7');
+    document.write('Congratulations ' + userName + '!  You guessed ' + (gameCount) + ' questions right out of 7');
+  }else {
+    console.log('Too bad ' + userName + ' you really need to sharpen your skills.  May I suggest some classes at Code Fellows?');
+    document.write('Too bad ' + userName + ' you really need to sharpen your skills.  May I suggest some classes at Code Fellows?');  
+  }
+}
+
+user(userName);
 question1(response);
 question2(response);
 question3(response);
 question4(response);
 question5(response);
+question6(response);
+question7(response);
+results();
+
