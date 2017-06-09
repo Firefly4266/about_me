@@ -3,6 +3,7 @@ body {
   background-repeat: no-repeat;
   background-size:  100%; 
   background-color: lightgray;
+  font-size: 2.5vh;
 }
 
 .greet {
@@ -26,6 +27,23 @@ body {
 
 .center {
   margin: auto;
+}
+
+.sticky {
+  display: flex;
+  flex: 1;
+  margin: auto;
+}
+
+#message {
+  margin: auto;
+  color: red;
+}
+
+@media (max-width: 650px) {
+  body {
+    background-image: none;
+  }
 }
 
 @media (min-width: 900px) {

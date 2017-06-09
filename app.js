@@ -140,21 +140,21 @@ function question7() {
 
 function results(){
   if(gameCount >= 5) {
-    console.log('Congratulations ' + userName + '!  You guessed ' + (gameCount) + ' questions right out of 7');
-    // document.write('Congratulations ' + userName + '!  You guessed ' + (gameCount) + ' questions right out of 7');
+    console.log(userName + ' answered ' + gameCount + ' questions correctly.');    
+    prompt('Congratulations ' + userName + '!  You guessed ' + (gameCount) + ' questions right out of 7');
   }else {
-    console.log('Too bad ' + userName + ' you really need to sharpen your skills.  May I suggest some classes at Code Fellows?');
-    // document.write('Too bad ' + userName + ' you really need to sharpen your skills.  May I suggest some classes at Code Fellows?');  
+    console.log(userName + ' answered ' + gameCount + ' questions correctly.');
+    prompt('Too bad ' + userName + ' you really need to sharpen your skills. You guessed ' + (gameCount) + ' questions right out of 7. Better luck next time.');  
   }
 }
 
-user(userName);
-question1(response);
-question2(response);
-question3(response);
-question4(response);
-question5(response);
-question6(response);
-question7(response);
-results();
+// user(userName);
+// question1(response);
+// question2(response);
+// question3(response);
+// question4(response);
+// question5(response);
+// question6(response);
+// question7(response);
+// results();
 
