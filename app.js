@@ -122,9 +122,9 @@ function question7() {
       for (i = 0; i < 5; i++) {
         if (states.indexOf(response) >= 0) {
           alert('Great job ' + userName + '!  Your\'re pretty sharp!');
-          console.log(userName + ' used ' + tries + ' out of ' + '6 guesses.');
+          console.log(userName + ' used ' + tries + ' out of 6 guesses.');
           gameCount++;
-          break;
+          return;
         }else {
           alert('Sorry ' + userName + ', that is incorrect.  You have ' + triesLeft + ' tries left.');
           console.log('Wrong answer, ' + userName + '\'s answer was ' + response + '. ' + (tries) + ' guesses used.');
@@ -141,10 +141,10 @@ function question7() {
 function results(){
   if(gameCount >= 5) {
     console.log('Congratulations ' + userName + '!  You guessed ' + (gameCount) + ' questions right out of 7');
-    document.write('Congratulations ' + userName + '!  You guessed ' + (gameCount) + ' questions right out of 7');
+    // document.write('Congratulations ' + userName + '!  You guessed ' + (gameCount) + ' questions right out of 7');
   }else {
     console.log('Too bad ' + userName + ' you really need to sharpen your skills.  May I suggest some classes at Code Fellows?');
-    document.write('Too bad ' + userName + ' you really need to sharpen your skills.  May I suggest some classes at Code Fellows?');  
+    // document.write('Too bad ' + userName + ' you really need to sharpen your skills.  May I suggest some classes at Code Fellows?');  
   }
 }
 
