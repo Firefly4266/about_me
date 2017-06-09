@@ -1,15 +1,13 @@
 'use strict';
 
 var states = ['illinois', 'texas','shock', 'massachusetts','grace', 'missouri', 'rhode island', 'disbelief'] ;
-var userName, response;
+var userName, response, gameCount = 0, answer = 'yes', wrong = 'no', count = 1, spent = 3, tree = 5;
 
 function user() {
   userName = prompt('Welcome to my page.  If you ready to play introduce yourself.');
   alert('Nice to meet you ' + userName + '. I am going to ask you some questions about me.  No pressure really? A short series of Yes or No questions.  Please answer Yes (y) or NO (n).');
   console.log('The user name is ' + userName);
 }
-
-var gameCount = 0, answer = 'yes', wrong = 'no';
 
 function question1() {
   response = prompt('Was I a successful Bridge Officer?').toLowerCase();
@@ -76,7 +74,6 @@ function question5() {
   console.log('The response from ' + userName + ' was ' + response);
 }
 
-var count = 1, spent = 3, tree = 5;
 
 function question6() {
   alert('Ok ' + userName + ', now var\'s check your binary search skills!  I\'ll give you 4 chances to guess how many fruit trees I have.  I\'ll even tell you if you are too high or too low.');
