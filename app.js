@@ -104,15 +104,15 @@ alert('Ok ' + userName + ', it\'s time to shift gears.  Heres a different challe
 var states = ['illinois', 'texas','shock', 'massachusetts','grace', 'missouri', 'rhode island', 'disbelief'] ;
 var tries = 1;
 var triesLeft = 5;
-var response = false;
 
 while (tries < 6) {
   var response7 = prompt(userName + ' Can you guess a state I lived in besides Washington?').toLowerCase();
-  if (isNaN(response7) === false || null || undefined) {
+  if (isNaN(response7) === false) {
     alert(userName + ' your response is not valid.  Please enter a valid state.');
   } else {
-    for (var i = 0; i < 5; i++) {
-      if (states.indexOf(response7) >=0) {
+    var i;
+    for (i = 0; i < 5; i++) {
+      if (states.indexOf(response7) >= 0) {
         alert('Great job ' + userName + '!  Your\'re pretty sharp!');
         console.log(userName + ' used ' + tries + ' out of ' + '6 guesses.');
         gameCount++;
@@ -120,11 +120,12 @@ while (tries < 6) {
       }else {
         alert('Sorry ' + userName + ', that is incorrect.  You have ' + triesLeft + ' tries left.');
         console.log('Wrong answer, ' + userName + '\'s answer was ' + response7 + '. ' + (tries) + ' guesses used.');
-        response7 = prompt(userName + ' Can you guess a state I lived in besides Washington?').toLowerCase();
+        response7 = prompt(userName + ' Can you guess one state I lived in besides Washington?').toLowerCase();
         tries++;
         triesLeft--;
       }
     }
+    tries = 7;
   }
 }
 
