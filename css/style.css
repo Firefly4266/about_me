@@ -28,6 +28,12 @@ body {
   margin: auto;
 }
 
+.sticky {
+  display: flex;
+  min-height: 100hv;
+  flex-direction: column;
+}
+
 @media (min-width: 900px) {
   .align {
     display: flex;
