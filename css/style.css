@@ -42,7 +42,7 @@ body {
 
 @media (max-width: 650px) {
   body {
-    background-image: none;
+    background-image: url("../public/images/dark_slinger.png");
   }
 }
 
