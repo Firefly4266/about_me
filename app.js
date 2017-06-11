@@ -1,7 +1,7 @@
 'use strict';
 
 var states = ['illinois', 'texas','shock', 'massachusetts','grace', 'missouri', 'rhode island', 'disbelief'] ;
-var userName, response, gameCount = 0, answer = 'yes', wrong = 'no', count = 1, spent = 3, tree = 5;
+var userName, response, gameCount = 0, answer = 'yes', wrong = 'no', count = 0, spent = 3, tree = 5;
 
 function user() {
   userName = prompt('Welcome to my page.  If you ready to play introduce yourself.');
@@ -78,7 +78,7 @@ function question5() {
 function question6() {
   alert('Ok ' + userName + ', now var\'s check your binary search skills!  I\'ll give you 4 chances to guess how many fruit trees I have.  I\'ll even tell you if you are too high or too low.');
   response = parseInt(prompt('So ' + userName + ', how many fruit trees do I have?'));
-  while (count <= 4) {
+  while (count < 4) {
     if(isNaN(response) === false) {
       if (response === tree) {
         alert('Excellent Guess ' + userName + '!!!  You are a true binary search ninja!!!');
@@ -107,6 +107,14 @@ function question6() {
       response = parseInt(prompt('So ' + userName + ', how many fruit trees do I have?'));
     }
   }
+  console.log(count);
+  if(count === 4) {
+    prompt('Sorry ' + userName + ', you are out of guesses.  I have 5 fruit trees');
+  }else {
+    alert('Excellent Guess ' + userName + '!!!  You are a true binary search ninja!!!');
+    console.log(userName + ' guessed' + response + ' the answer is ' + tree);
+    gameCount++;
+  }
 }
 
 var tries = 1, triesLeft = 5;
@@ -121,7 +129,7 @@ function question7() {
       var i;
       for (i = 0; i < 5; i++) {
         if (states.indexOf(response) >= 0) {
-          alert('Great job ' + userName + '!  Your\'re pretty sharp!');
+          alert('Great job ' + userName + '!  Your\'re pretty sharp! Other states I\'ve lived in are: illinois, texas,shock, massachusetts, grace, missouri, rhode island, disbelief');
           console.log(userName + ' used ' + tries + ' out of 6 guesses.');
           gameCount++;
           return;
@@ -136,6 +144,7 @@ function question7() {
       tries = 7;
     }
   }
+  if(triesLeft === 0) alert('Sorry ' + userName + ', you are out of guesses.  Other states I\'ve lived in are: illinois, texas,shock, massachusetts, grace, missouri, rhode island, disbelief');
 }
 
 function results(){
@@ -144,17 +153,17 @@ function results(){
     prompt('Congratulations ' + userName + '!  You guessed ' + (gameCount) + ' questions right out of 7');
   }else {
     console.log(userName + ' answered ' + gameCount + ' questions correctly.');
-    prompt('Too bad ' + userName + ' you really need to sharpen your skills. You guessed ' + (gameCount) + ' questions right out of 7. Better luck next time.');  
+    alert('Too bad ' + userName + ' you really need to sharpen your skills. You guessed ' + (gameCount) + ' questions right out of 7. Better luck next time.');  
   }
 }
 
-// user(userName);
+user(userName);
 // question1(response);
 // question2(response);
 // question3(response);
 // question4(response);
 // question5(response);
-// question6(response);
+question6(response);
 // question7(response);
-// results();
+results();
 
