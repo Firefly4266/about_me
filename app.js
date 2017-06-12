@@ -107,7 +107,6 @@ function question6() {
       response = parseInt(prompt('So ' + userName + ', how many fruit trees do I have?'));
     }
   }
-  console.log(count);
   if(count === 4 && response != 5) {
     alert('Sorry ' + userName + ', you are out of guesses.  I have 5 fruit trees');
   }
@@ -123,35 +122,35 @@ var tries = 1, triesLeft = 5;
 function question7() {
   alert('Ok ' + userName + ', it\'s time to shift gears.  Heres a different challenge.');
   while (tries < 6) {
-    var response = prompt(userName + ' Can you guess a state I lived in besides Washington?').toLowerCase();
-    if (isNaN(response) === false) {
-      alert(userName + ' your response is not valid.  Please enter a valid state.');
-    } else {
-      var i;
-      for (i = 0; i < 5; i++) {
+    var i;
+    for (i = 0; i <= 5; i++) {
+      var response = prompt(userName + ' Can you guess a state I lived in besides Washington?').toLowerCase();
+      if (isNaN(response) === false) {
+        alert(userName + ' your response is not valid.  Please enter a valid state.');
+        i--;
+      } else {
         if (states.indexOf(response) >= 0) {
           alert('Great job ' + userName + '!  Your\'re pretty sharp! Other states I\'ve lived in are: illinois, texas,shock, massachusetts, grace, missouri, rhode island, disbelief');
           console.log(userName + ' used ' + tries + ' out of 6 guesses.');
           gameCount++;
           return;
-        }else {
+        }else if(triesLeft !== 0) {
           alert('Sorry ' + userName + ', that is incorrect.  You have ' + triesLeft + ' tries left.');
-          console.log('Wrong answer, ' + userName + '\'s answer was ' + response + '. ' + (tries) + ' guesses used.');
-          response = prompt(userName + ' Can you guess one state I lived in besides Washington?').toLowerCase();
+          console.log('Wrong answer, ' + userName + '\'s answer was ' + response + '. ' + (tries) + ' guesses used.');          
           tries++;
           triesLeft--;
+        }else {
+          alert('Sorry ' + userName + ', you are out of guesses.  Other states I\'ve lived in are: illinois, texas,shock, massachusetts, grace, missouri, rhode island, disbelief');
         }
       }
-      tries = 7;
     }
   }
-  if(triesLeft === 0) alert('Sorry ' + userName + ', you are out of guesses.  Other states I\'ve lived in are: illinois, texas,shock, massachusetts, grace, missouri, rhode island, disbelief');
 }
 
 function results(){
   if(gameCount >= 5) {
     console.log(userName + ' answered ' + gameCount + ' questions correctly.');    
-    prompt('Congratulations ' + userName + '!  You guessed ' + (gameCount) + ' questions right out of 7');
+    alert('Congratulations ' + userName + '!  You guessed ' + (gameCount) + ' questions right out of 7');
   }else {
     console.log(userName + ' answered ' + gameCount + ' questions correctly.');
     alert('Too bad ' + userName + ' you really need to sharpen your skills. You guessed ' + (gameCount) + ' questions right out of 7. Better luck next time.');  
@@ -159,12 +158,12 @@ function results(){
 }
 
 user(userName);
-// question1(response);
-// question2(response);
-// question3(response);
-// question4(response);
-// question5(response);
+question1(response);
+question2(response);
+question3(response);
+question4(response);
+question5(response);
 question6(response);
-// question7(response);
+question7(response);
 results();
 
