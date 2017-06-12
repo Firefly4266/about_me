@@ -18,9 +18,14 @@ h2 {
   position: absolute;
   margin-top: 10em;
   z-index: 2;
-  margin-left:10em; 
+  margin-left:10em;
 }
 
 .greet {
   position: relative;
+}
+
+.center {
+  position: absolute;
+  bottom: 0;
 }

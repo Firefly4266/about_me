@@ -59,5 +59,3 @@ if (response5 === answer || response5 === answer[0]) {
   alert(userName + ', if you\'re not going to give real answers I\'m done!');
 }
 console.log('The response from ' + userName + ' was ' + response5);
-
-
