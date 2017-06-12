@@ -70,33 +70,40 @@ var tree = 5;
 alert('Ok ' + userName + ', now var\'s check your binary search skills!  I\'ll give you 4 chances to guess how many fruit trees I have.  I\'ll even tell you if you are too high or too low.');
 
 var response6 = parseInt(prompt('So ' + userName + ', how many fruit trees do I have?'));
-while (count <= 4) {
+while (count < 4) {
   if(isNaN(response6) === false) {
     if (response6 === tree) {
-      alert('Excellent Guess ' + userName + '!!!  You are a true binary search ninja!!!');
-      gameCount++;
       count = 5;
     }else if (response6 > tree){
       alert('Sorry ' + userName + ', that was too high.  Try again. You have ' + spent + ' tries left.');
-      spent--;
       console.log(userName + '\'s answer was ' + response6 +'. The correct answer was 5. Incorrect answer total ' + (4 - spent));
+      spent--;
       response6 = parseInt(prompt('So ' + userName + ', how many fruit trees do I have?'));
     }else if (response6 < tree){
       alert('Sorry ' + userName + ', that was too low.  Try again. You have ' + spent + ' tries left.');
-      response6 = parseInt(prompt('So ' + userName + ', how many fruit trees do I have?'));
-      spent--;
       console.log(userName + '\'s answer was ' + response6 +'. The correct answer was 5. Incorrect answer total ' + (4 - spent));  
+      spent--;
+      response6 = parseInt(prompt('So ' + userName + ', how many fruit trees do I have?'));
     }else {
       alert('Sorry ' + userName + ' that is incorrect.  You have ' + spent + ' tries left.');
-      response6 = parseInt(prompt('So ' + userName + ', how many fruit trees do I have?'));
-      spent--;
       console.log(userName + '\'s answer was ' + response6 +'. The correct answer was 5. Incorrect answer total ' + (4 - spent)); 
+      spent--;
+      response6 = parseInt(prompt('So ' + userName + ', how many fruit trees do I have?'));
     }
     count++;
   }else {
     alert('Please enter a valid number');
     response6 = parseInt(prompt('So ' + userName + ', how many fruit trees do I have?'));
   }
+}
+
+if(count === 4 && response6 != 5) {
+  alert('Sorry ' + userName + ', you are out of guesses.  I have 5 fruit trees');
+}
+else {
+  alert('Excellent Guess ' + userName + '!!!  You are a true binary search ninja!!!');
+  console.log(userName + ' guessed' + response6 + ' the answer is ' + tree);
+  gameCount++;
 }
 
 alert('Ok ' + userName + ', it\'s time to shift gears.  Heres a different challenge.');
