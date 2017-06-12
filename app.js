@@ -81,9 +81,7 @@ function question6() {
   while (count < 4) {
     if(isNaN(response) === false) {
       if (response === tree) {
-        alert('Excellent Guess ' + userName + '!!!  You are a true binary search ninja!!!');
         console.log(userName + ' guessed' + response + ' the answer is ' + tree);
-        gameCount++;
         count = 5;
       }else if (response > tree){
         alert('Sorry ' + userName + ', that was too high.  Try again. You have ' + spent + ' tries left.');
