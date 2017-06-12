@@ -1,7 +1,7 @@
 'use strict';
 
 var states = ['illinois', 'texas','shock', 'massachusetts','grace', 'missouri', 'rhode island', 'disbelief'] ;
-var userName, response, gameCount = 0, answer = 'yes', wrong = 'no', count = 0, spent = 3, tree = 5;
+var userName, response, gameCount = 0, answer = 'yes', wrong = 'no', count = 1, spent = 3, tree = 5;
 
 function user() {
   userName = prompt('Welcome to my page.  If you ready to play introduce yourself.');
@@ -109,12 +109,13 @@ function question6() {
   }
   console.log(count);
   if(count === 4) {
-    prompt('Sorry ' + userName + ', you are out of guesses.  I have 5 fruit trees');
-  }else {
-    alert('Excellent Guess ' + userName + '!!!  You are a true binary search ninja!!!');
-    console.log(userName + ' guessed' + response + ' the answer is ' + tree);
-    gameCount++;
+    alert('Sorry ' + userName + ', you are out of guesses.  I have 5 fruit trees');
   }
+  // else {
+  //   alert('Excellent Guess ' + userName + '!!!  You are a true binary search ninja!!!');
+  //   console.log(userName + ' guessed' + response + ' the answer is ' + tree);
+  //   gameCount++;
+  // }
 }
 
 var tries = 1, triesLeft = 5;
