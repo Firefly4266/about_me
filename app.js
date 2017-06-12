@@ -127,7 +127,7 @@ function question7() {
         alert(userName + ' your response is not valid.  Please enter a valid state.');
         i--;
       } else {
-        if (states.indexOf(response) >= 0) {
+        if (~states.indexOf(response)) {
           alert('Great job ' + userName + '!  Your\'re pretty sharp! Other states I\'ve lived in are: illinois, texas,shock, massachusetts, grace, missouri, rhode island, disbelief');
           console.log(userName + ' used ' + tries + ' out of 6 guesses.');
           gameCount++;
