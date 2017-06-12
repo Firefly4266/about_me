@@ -108,14 +108,14 @@ function question6() {
     }
   }
   console.log(count);
-  if(count === 4) {
+  if(count === 4 && response != 5) {
     alert('Sorry ' + userName + ', you are out of guesses.  I have 5 fruit trees');
   }
-  // else {
-  //   alert('Excellent Guess ' + userName + '!!!  You are a true binary search ninja!!!');
-  //   console.log(userName + ' guessed' + response + ' the answer is ' + tree);
-  //   gameCount++;
-  // }
+  else {
+    alert('Excellent Guess ' + userName + '!!!  You are a true binary search ninja!!!');
+    console.log(userName + ' guessed' + response + ' the answer is ' + tree);
+    gameCount++;
+  }
 }
 
 var tries = 1, triesLeft = 5;
